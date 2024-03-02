@@ -1,33 +1,38 @@
 {
-  "name": "nextjs-chrome-extension",
+  "name": "js-app-template",
   "version": "0.1.0",
-  "description": "Template to create chrome extension with Next.js",
+  "description": "Template to create applications with Javascript",
   "private": true,
   "scripts": {
-    "dev": "npm run dev --workspace=app-ui",
-    "build": "npm run build --workspace=app-ui",
-    "extension:dev": "npm run extension:dev --workspace=app-ui && npm run dev --workspace=extension-specific",
-    "extension:build": "npm run extension:build --workspace=app-ui && npm run build --workspace=extension-specific",
-    "extension:test": "npm run dev --workspace=extension-test-app",
+    "dev": "npm run dev --workspace=core",
+    "build": "npm run build --workspace=core",
+    "extension:dev": "npm run extension:dev --workspace=core && npm run dev --workspace=extension",
+    "extension:build": "npm run extension:build --workspace=core && npm run build --workspace=extension",
+    "extension:test": "npm run dev --workspace=extension-test",
     "utility:api-codegen": "npm run api-codegen --workspace=utility-scripts",
     "utility:icon-generator": "npm run icon-generator --workspace=utility-scripts",
     "prettier": "prettier --write ."
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fukaraadam-workspace/chrome-extension-nextjs-template.git"
+    "url": "git+https://github.com/Cumulativerse/js-app-template.git"
   },
   "keywords": [
-    "chrome extension",
     "nextjs",
+    "browser extension",
+    "chrome extension",
     "template"
   ],
   "author": "Furkan Alan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fukaraadam-workspace/chrome-extension-nextjs-template/issues"
+    "url": "https://github.com/Cumulativerse/js-app-template/issues"
   },
   "workspaces": [
+    "core",
+    "extension",
+    "extension-test",
+    "utility-scripts",
     "packages/*"
   ],
   "devDependencies": {

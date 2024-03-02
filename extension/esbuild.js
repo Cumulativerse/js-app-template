@@ -5,7 +5,7 @@ import { manifest } from './manifest.js';
 
 const isDev = process.argv.length > 2 && process.argv[2] == '--development';
 console.log('isDev: ', isDev);
-const outDir = '../app-ui/out';
+const outDir = '../core/out';
 
 /** @type {import('esbuild').BuildOptions} */
 const options = {

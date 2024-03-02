@@ -1,6 +1,6 @@
 import { generateEndpoints } from '@rtk-query/codegen-openapi';
 
-const uiDirectory = '../app-ui';
+const uiDirectory = '../core';
 
 async function apiCodegen() {
   // CoinGeckoApi

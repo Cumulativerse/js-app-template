@@ -21,9 +21,9 @@ Core application is a static website.
 
 - `npm run extension:dev` - Development mode for extension. Load output directory as unpacked extension in chrome (enable developer mode in extensions).
   - For UI changes, no need to refresh extension, just build ui again and reopen popup
-  - For extension-specific changes, it will automatically build again, just reload extension. For content script changes, you need to reload test page too.
+  - For extension changes, it will automatically build again, just reload extension. For content script changes, you need to reload test page too.
 - `npm run extension:build` - Build extension for production. It will minify code and disable source map.
-- `npm run extension:test` - Test extension against a website. Open [http://localhost:3001](http://localhost:3001) with your browser to see the result. 3000 is reserved for app-ui development.
+- `npm run extension:test` - Test extension against a website. Open [http://localhost:3001](http://localhost:3001) with your browser to see the result. 3000 is reserved for core development.
 
 ## Structure
 
@@ -31,12 +31,12 @@ Git lfs can be used for storing binary files by initializing it and editing `exa
 
 ### Folder Structure
 
+- core: Next.js app for UI and static website.
+- extenion: browser extension specific files e.g. worker scripts and manifest.json.
+- extension-test: Next.js app to test extension related features.
+- utility-scripts: Utility scripts to be used manually.
 - packages: Include all seperate packages.
-  - app-ui: Next.js app for UI.
-  - extenion-specific: chrome extension specific files e.g. worker scripts and manifest.json.
-  - extension-test-app: Next.js app to test extension related features.
   - shared-lib: Shared library for all packages.
-  - utility-scripts: Utility scripts to be used manually.
 
 ### Naming Convention
 

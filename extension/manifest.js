@@ -1,6 +1,6 @@
 export const manifest = {
-  name: 'Next.js Chrome Extension',
-  description: 'Next.js Chrome Extension starter',
+  name: 'Browser Extension Template',
+  description: 'Browser extension example',
   version: process.env.npm_package_version,
   manifest_version: 3,
   icons: {

@@ -3,11 +3,11 @@ import toIco from 'to-ico';
 import { createCanvas, loadImage } from 'canvas';
 
 const sourceIconDir = './src/icon-generator';
-const uiPubDir = '../app-ui/public';
-const uiAppDir = '../app-ui/src/app';
-const extensionIconDir = '../extension-specific/public/assets';
-const testPubDir = '../extension-test-app/public';
-const testAppDir = '../extension-test-app/src/app';
+const uiPubDir = '../core/public';
+const uiAppDir = '../core/src/app';
+const extensionIconDir = '../extension/public/assets';
+const testPubDir = '../extension-test/public';
+const testAppDir = '../extension-test/src/app';
 
 const faviconSize = 32;
 const iconSizes = [16, 48, 128];
