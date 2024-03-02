@@ -1,0 +1,21 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "files.associations": {
+    ".env.*": "properties",
+    "*.css": "tailwindcss"
+  },
+  "markdownlint.config": { // Added these for Github Markdown
+    "MD033": {
+      "allowed_elements": [
+        "a",
+        "span",
+        "h1",
+        "img",
+        "p"
+      ]
+    },
+    "first-line-h1": false
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}
