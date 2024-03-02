@@ -1,35 +1,33 @@
-# Next.js Chrome Extension
+# JavaScript Application Template
 
-Example project for a chrome extension development with Next.js.
+Example project for developing different types of applications by mainly using JavaScript. It can be used to develop website, desktop app, mobile app, browser extension. It also includes best practises, frameworks and tools for development.
 
 ## Usage
 
 Run `npm install` from root directory. This will install all dependencies for all workspaces.
 Run all these commands from root directory.
 
-### Development
+### Core Development
 
-- Run `npm run build-extension:dev` to build for chrome extension. Output will be in `./out` directory. Load output directory as unpacked extension in chrome (enable developer mode in extensions).
-- To test extension, run `npm run test`.
-  - Open [http://localhost:3001](http://localhost:3001) with your browser to see the result. 3000 is reserved for app-ui development.
-- For UI changes, run `npm run build-extension:ui:dev` no need to refresh extension, just reopen popup
-- For extension-specific changes, it will automatically build again, just reload extension. For content script changes, you need to reload page.
+Core application is a static website.
 
-### Production
+- `npm run dev` - Start website in development mode.
+- `npm run build` - Build for production.
+- `npm run utility:api-codegen` - Update api types from swagger.
+- `npm run utility:icon-generator` - Update all icons and logos.
+- `npm run prettier` - Run prettier for all files.
 
-- Run `npm run build-extension` to build for production. It will minify code and disable source map. Output will be in `./out` directory.
+### Extension Development
 
-### Utility Commands
-
-- `npm run dev` - Start app-ui in development mode.
-- `npm run build-extension:ui` - Build again for app-ui changes without rebuilding others.
-- `npm run build-extension:specific` - Build again for extension-specific changes without rebuilding others.
-- `npm run utility:api-codegen` - Update app-ui api types from swagger.
-- `npm run utility:icon-generator` - Update app-ui and extension-specific icons.
+- `npm run extension:dev` - Development mode for extension. Load output directory as unpacked extension in chrome (enable developer mode in extensions).
+  - For UI changes, no need to refresh extension, just build ui again and reopen popup
+  - For extension-specific changes, it will automatically build again, just reload extension. For content script changes, you need to reload test page too.
+- `npm run extension:build` - Build extension for production. It will minify code and disable source map.
+- `npm run extension:test` - Test extension against a website. Open [http://localhost:3001](http://localhost:3001) with your browser to see the result. 3000 is reserved for app-ui development.
 
 ## Structure
 
-Git lfs is used for storing binary files. VS Code is used for development. Prettier is used for auto code formatting with Prettier VS Code extension.
+Git lfs can be used for storing binary files by initializing it and editing `example.gitattributes`. VS Code is used for development. Prettier is used for auto code formatting with Prettier VS Code extension.
 
 ### Folder Structure
 

@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc && node esbuild.js",
-    "build:dev": "node esbuild.js --development"
+    "dev": "node esbuild.js --development",
+    "build": "tsc && node esbuild.js"
   },
   "dependencies": {
     "shared-lib": "^0.1.0"
