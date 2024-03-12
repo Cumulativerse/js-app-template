@@ -11,6 +11,7 @@
     "extension:test": "npm run dev --workspace=extension-test",
     "utility:api-codegen": "npm run api-codegen --workspace=utility-scripts",
     "utility:icon-generator": "npm run icon-generator --workspace=utility-scripts",
+    "lint": "npm run lint --workspaces --if-present",
     "prettier": "prettier --write ."
   },
   "repository": {
