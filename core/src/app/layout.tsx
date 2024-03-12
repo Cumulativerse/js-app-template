@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import StoreProvider from '@/components/layout/store-provider';
@@ -21,8 +23,36 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="dark">
-      <body className={`${inter.className} min-h-screen`}>
-        <StoreProvider>{children}</StoreProvider>
+      <body
+        className={`${inter.className}${process.env.APP_TYPE === 'extension' ? ' min-h-[600px] min-w-[400px]' : ''}`}
+      >
+        <div className="container flex min-h-screen flex-col items-center justify-between p-8">
+          {/* Header */}
+          <Link href="/">
+            <Image
+              className="relative"
+              src="/logo.svg"
+              alt="Logo"
+              width={180}
+              height={37}
+              priority
+            />
+          </Link>
+          {/* Main */}
+          <StoreProvider>{children}</StoreProvider>
+          {/* Footer */}
+          <div>
+            <span>©{new Date().getFullYear()} — Made by </span>
+            <a
+              href="https://www.cumulativerse.com"
+              className="hover:text-accent underline"
+              target="_blank"
+              rel="external author"
+            >
+              Cumulativerse
+            </a>
+          </div>
+        </div>
       </body>
     </html>
   );

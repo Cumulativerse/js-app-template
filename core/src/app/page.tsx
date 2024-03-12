@@ -3,7 +3,7 @@ import { appNavs } from '@/data/navigation';
 
 export default function Home() {
   return (
-    <main className="container flex flex-col items-center">
+    <main className="flex flex-col items-center">
       <div className="prose lg:prose-xl my-4">
         <h1>APPs</h1>
       </div>

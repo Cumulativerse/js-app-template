@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-// Controllers
 import { respondQuestion } from '@/lib/controllers/send-message';
 
 export default function Popup() {
@@ -13,36 +12,26 @@ export default function Popup() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-12">
-      <Image
-        className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-        src="/logo.svg"
-        alt="Logo"
-        width={180}
-        height={37}
-        priority
-      />
-
-      <div>
-        <p className="my-2 text-center">{searchParams.get('question')}</p>
-
-        <div>
-          <button
-            onClick={() => confirmationHandler(true)}
-            className="mx-2 rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
-          >
-            Accept
-          </button>
-          <button
-            onClick={() => confirmationHandler(false)}
-            className="mx-2 rounded-full bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
-          >
-            Reject
-          </button>
-        </div>
+    <main className="flex flex-col items-center">
+      <div className="prose lg:prose-xl">
+        <h1>Popup Page</h1>
+        <p className="text-center">{searchParams.get('question')}</p>
       </div>
 
-      <div></div>
+      <div>
+        <button
+          onClick={() => confirmationHandler(true)}
+          className="btn btn-primary mr-2"
+        >
+          Accept
+        </button>
+        <button
+          onClick={() => confirmationHandler(false)}
+          className="btn btn-secondary"
+        >
+          Reject
+        </button>
+      </div>
     </main>
   );
 }

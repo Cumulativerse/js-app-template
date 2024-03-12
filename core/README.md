@@ -6,6 +6,7 @@ Next.js is used with static site generation and Flux design will be followed wit
 
 - Api types can be automatically generated from swagger with `npm run utility:api-codegen` command.
 - Favicon can be generated with `npm run utility:icon-generator` command.
+- `APP_TYPE=extension` environment variable can be used to detect build type. `npm run extension:...` commands are using this variable.
 - `BUILD_MODE=development` environment variable can be used to generate source map for build. `npm run extension:dev` command is using this variable to set build mode.
 
 ## Structure

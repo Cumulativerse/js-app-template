@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 // Controllers
 import { checkClickNum } from '@/lib/controllers/send-message';
 
@@ -18,22 +16,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="mx-auto h-[600px] w-[400px]">
-      {/* Above is added for extension */}
-      <main className="flex min-h-screen flex-col items-center justify-between p-12">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/logo.svg"
-          alt="Logo"
-          width={180}
-          height={37}
-          priority
-        />
+    <main className="prose lg:prose-xl">
+      <h1>Extension Page</h1>
 
-        <div>
-          <p className="my-2 text-center">Click Number: {clickNum}</p>
-        </div>
-      </main>
-    </div>
+      <p className="text-center">Click Number: {clickNum}</p>
+    </main>
   );
 }
