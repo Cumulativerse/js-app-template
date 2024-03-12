@@ -5,7 +5,12 @@ import { pokemonApi } from './features/tmp/pokemonApi/pokemonApi';
 import { coinGeckoApi } from './features/tmp/coinGeckoApi/coinGeckoApi';
 // For logging errors
 import { isRejectedWithValue } from '@reduxjs/toolkit';
-import type { MiddlewareAPI, Middleware } from '@reduxjs/toolkit';
+import type {
+  MiddlewareAPI,
+  Middleware,
+  ThunkAction,
+  Action,
+} from '@reduxjs/toolkit';
 
 /**
  * Catch all errors from RTK Query
@@ -40,3 +45,9 @@ export const store = configureStore({
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;

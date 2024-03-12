@@ -4,7 +4,7 @@
 import { Provider } from 'react-redux';
 import { store } from '@/lib/redux/store';
 
-export default function LayoutClient({
+export default function StoreProvider({
   children,
 }: {
   children: React.ReactNode;

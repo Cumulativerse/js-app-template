@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Layout from '@/components/layout/layout';
+import StoreProvider from '@/components/layout/store-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: '%s | ' + process.env.NEXT_PUBLIC_APP_TITLE,
   },
   description: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
-  keywords: ['app', 'next.js extension'],
+  keywords: ['app', 'next.js examples'],
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body className={`${inter.className} min-h-screen`}>
-        <Layout>{children}</Layout>
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );
