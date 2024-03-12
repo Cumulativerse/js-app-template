@@ -1,6 +1,6 @@
 import { generateEndpoints } from '@rtk-query/codegen-openapi';
 
-const uiDirectory = '../core';
+const coreDirectory = '../core';
 
 async function apiCodegen() {
   // CoinGeckoApi
@@ -10,13 +10,13 @@ async function apiCodegen() {
     apiFile: '@/lib/redux/features/tmp/coinGeckoApi/coinGeckoApi.ts',
     apiImport: 'coinGeckoApi',
     outputFile:
-      uiDirectory +
+      coreDirectory +
       '/src/lib/redux/features/tmp/coinGeckoApi/coinGeckoEndpoint.ts',
     exportName: 'coinGeckoApi',
     // hooks: true, // Generate query and mutation hooks, but not lazy queries
     hooks: { queries: true, lazyQueries: true, mutations: true },
   });
-  console.log(`api-codegen: Updated api types in ${uiDirectory}`);
+  console.log(`api-codegen: Updated api types in ${coreDirectory}`);
 }
 
 // Self-invocation async function

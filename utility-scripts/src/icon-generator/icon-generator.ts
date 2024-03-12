@@ -3,10 +3,9 @@ import toIco from 'to-ico';
 import { createCanvas, loadImage } from 'canvas';
 
 const sourceIconDir = './src/icon-generator';
-const uiPubDir = '../core/public';
-const uiAppDir = '../core/src/app';
+const corePubDir = '../core/public';
+const coreAppDir = '../core/src/app';
 const extensionIconDir = '../extension/public/assets';
-const testPubDir = '../extension-test/public';
 const testAppDir = '../extension-test/src/app';
 
 const faviconSize = 32;
@@ -29,13 +28,12 @@ async function IconGenerator() {
   }
   // Generate Favicons
   generatedJobs.push(
-    generateIcoToFile(sourceData, `${uiAppDir}/favicon.ico`, faviconSize),
+    generateIcoToFile(sourceData, `${coreAppDir}/favicon.ico`, faviconSize),
     generateIcoToFile(sourceData, `${testAppDir}/favicon.ico`, faviconSize),
   );
   // Move logo SVG to public directories
   generatedJobs.push(
-    copyFile(sourceIconDir + '/logo.svg', `${uiPubDir}/logo.svg`),
-    copyFile(sourceIconDir + '/logo.svg', `${testPubDir}/logo.svg`),
+    copyFile(sourceIconDir + '/logo.svg', `${corePubDir}/logo.svg`),
   );
   await Promise.all(generatedJobs);
   console.log(`icon-generator: Icons generated.`);
