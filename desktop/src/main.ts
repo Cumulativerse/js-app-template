@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 import path from 'node:path';
 
-const coreDistDir = path.join(__dirname, '../out');
+const coreDistDir = path.join(__dirname, '../dist');
 const corePubDir = app.isPackaged
   ? coreDistDir
   : path.join(__dirname, '../../core/public');

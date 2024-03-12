@@ -1,22 +1,21 @@
 {
   "name": "desktop",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "node esbuild.mjs --development",
     "build": "tsc && vite build && electron-builder",
     "lint": "eslint --ignore-path .gitignore .",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
-    "eslint": "^8",
-    "typescript": "^5",
-    "vite": "^5",
-    "electron": "^28",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "electron": "^29.1.1",
     "electron-builder": "^24.13.3",
-    "vite-plugin-electron": "^0.28.2"
+    "esbuild": "^0.20.0",
+    "eslint": "^8",
+    "typescript": "^5"
   },
   "main": "dist-electron/main.js"
 }
