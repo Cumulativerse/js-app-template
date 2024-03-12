@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
-// Controllers
 import {
   broadcastClickNum,
   askConfirmation,
@@ -27,9 +25,8 @@ export default function Home() {
     setAnswer(res.isAccepted ? 'Accepted' : 'Rejected');
   };
   return (
-    <main className="container flex min-h-screen flex-col items-center justify-between px-4 py-8">
-      <Image src="/logo.svg" alt="Logo" width={180} height={37} priority />
-      <div className="prose lg:prose-xl mx-auto mt-2 text-center">
+    <main className="container flex min-h-screen flex-col items-center py-8">
+      <div className="prose lg:prose-xl mt-2 text-center">
         <h1>Extension Test App</h1>
         <p>Webpage to test your extension</p>
       </div>
@@ -43,7 +40,7 @@ export default function Home() {
             type="text"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            className="input input-bordered input-primary"
+            className="input input-primary"
           />
           <button onClick={handleConfirmation} className="btn btn-primary m-2">
             Ask Confirmation To Extension
