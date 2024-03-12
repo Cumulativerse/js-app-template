@@ -27,8 +27,8 @@ async function triggerPopup<T extends ExtMessageType>(
     const window = await chrome.windows.create({
       url: popupUrl.toString(),
       type: 'popup',
-      height: 600,
-      width: 400,
+      height: 700,
+      width: 450,
       left: 500,
     });
     currentPopup = window;
