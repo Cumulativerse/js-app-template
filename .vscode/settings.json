@@ -1,7 +1,10 @@
 {
+  // Added these for Prettier
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "files.insertFinalNewline": false,
+  // Added these for IntelliSense
   "files.associations": {
     ".env.*": "properties",
     "*.css": "tailwindcss"
@@ -9,13 +12,7 @@
   // Added these for Github Markdown
   "markdownlint.config": {
     "MD033": {
-      "allowed_elements": [
-        "a",
-        "span",
-        "h1",
-        "img",
-        "p"
-      ]
+      "allowed_elements": ["a", "span", "h1", "img", "p"]
     },
     "first-line-h1": false
   },

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node esbuild.mjs --development",
-    "build": "tsc && node esbuild.js && electron-builder",
+    "build": "tsc && node esbuild.mjs && electron-builder",
     "lint": "eslint --ignore-path .gitignore ."
   },
   "devDependencies": {

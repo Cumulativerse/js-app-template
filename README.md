@@ -27,7 +27,7 @@ Core application is a static website.
 
 ## Structure
 
-Git lfs can be used for storing binary files by initializing it and editing `example.gitattributes`. VS Code is used for development. Prettier is used for auto code formatting with Prettier VS Code extension.
+Git lfs can be used for storing binary files by initializing it and uncommenting `.gitattributes`. VS Code is used for development. Prettier is used for auto code formatting with Prettier VS Code extension.
 
 ### Folder Structure
 
