@@ -3,7 +3,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "files.eol": "\n",
-  "files.insertFinalNewline": false,
+  "files.insertFinalNewline": true,
   // Added these for IntelliSense
   "files.associations": {
     ".env.*": "properties",
