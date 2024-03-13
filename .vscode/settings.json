@@ -1,11 +1,13 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
   "files.associations": {
     ".env.*": "properties",
     "*.css": "tailwindcss"
   },
-  "markdownlint.config": { // Added these for Github Markdown
+  // Added these for Github Markdown
+  "markdownlint.config": {
     "MD033": {
       "allowed_elements": [
         "a",
