@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from 'electron';
+import express from 'express';
 import path from 'node:path';
 
 const coreDistDir = path.join(__dirname, '../dist');
@@ -23,9 +24,16 @@ function createWindow() {
   });
 
   if (!app.isPackaged) {
+    // Development mode
     win.loadURL(DEV_SERVER_URL);
   } else {
-    win.loadFile(path.join(coreDistDir, 'index.html'));
+    // Production mode
+    const server = express();
+    server.use(express.static(coreDistDir));
+    server.listen(5000, () => {
+      win?.loadURL('http://localhost:5000');
+    });
+    // win.loadFile(path.join(coreDistDir, 'index.html'));
   }
 }
 
