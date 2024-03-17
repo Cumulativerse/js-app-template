@@ -30,7 +30,7 @@ async function runDev() {
   nextjs.stdout.on('data', (data) => {
     process.stdout.write(data);
     if (data.includes('Ready in')) {
-      spawn('electron', ['./dist-electron/main.js'], {
+      spawn('npm', ['run preview'], {
         stdio: 'inherit',
         shell: true,
       });
