@@ -2,7 +2,8 @@
 
 ## Usage
 
-- Run `npm run dev` in core app then in desktop to start the development server
+- Run `npm run desktop:dev` in root.
+  - If electron script updated, close the app and run "npm run preview" in desktop folder.
 - Manually copy `core/out` directory to `desktop/dist` and run `npm run build` to build the desktop app
 
 ## ToDos

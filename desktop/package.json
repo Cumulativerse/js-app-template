@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node esbuild.mjs --development",
-    "build": "tsc && node esbuild.mjs && electron-builder",
+    "dev": "node esbuild.js --development",
+    "preview": "electron ./dist-electron/main.js",
+    "build": "tsc && node esbuild.js && electron-builder",
     "lint": "eslint --ignore-path .gitignore ."
   },
   "devDependencies": {
