@@ -2,9 +2,10 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 import * as crypto from 'crypto';
 
-const outDirectory = './out';
-
-async function BundleExtensionUi() {
+/**
+ * @param {string} outDirectory - The nextjs out directory to rebuild.
+ */
+export async function BundleExtensionUi(outDirectory) {
   // --Rename _next directory to next--
   const directoryToRename = path.join(outDirectory, '/_next');
   const newDirectoryName = path.join(outDirectory, '/next');
@@ -77,11 +78,3 @@ function externalizeInlineScripts(directory, file, data) {
     },
   );
 }
-
-// Self-invocation async function
-(async () => {
-  await BundleExtensionUi();
-})().catch((err) => {
-  console.error(err);
-  throw err;
-});

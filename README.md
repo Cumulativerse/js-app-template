@@ -25,7 +25,7 @@ Core application is a static website.
 
 ### Extension Development
 
-- `npm run extension:dev` - Development mode for extension. Load output directory as unpacked extension in chrome (enable developer mode in extensions).
+- `npm run extension:dev` - Development mode for extension. Load `./extension/out` directory as unpacked extension in chrome (enable developer mode in extensions).
   - For UI changes, no need to refresh extension, just build ui again and reopen popup
   - For extension changes, it will automatically build again, just reload extension. For content script changes, you need to reload test page too.
 - `npm run extension:build` - Build extension for production. It will minify code and disable source map.
@@ -38,6 +38,7 @@ Git lfs can be used for storing binary files by initializing it and uncommenting
 ### Folder Structure
 
 - core: Next.js app for UI and static website.
+- desktop: Electron app for desktop.
 - extenion: browser extension specific files e.g. worker scripts and manifest.json.
 - extension-test: Next.js app to test extension related features.
 - utility-scripts: Utility scripts to be used manually.

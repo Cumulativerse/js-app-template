@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "extension:dev": "cross-env APP_TYPE=extension BUILD_MODE=development next build && node ./build-extension.mjs",
-    "extension:build": "cross-env APP_TYPE=extension next build && node ./build-extension.mjs",
+    "extension:dev": "cross-env APP_TYPE=extension BUILD_MODE=development next build",
+    "extension:build": "cross-env APP_TYPE=extension next build",
     "start": "next start",
     "lint": "next lint"
   },
