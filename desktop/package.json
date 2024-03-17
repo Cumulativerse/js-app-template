@@ -17,6 +17,7 @@
     "electron-builder": "^24.13.3",
     "esbuild": "^0.20.0",
     "eslint": "^8",
+    "fs-extra": "^11.2.0",
     "typescript": "^5"
   },
   "main": "dist-electron/main.js",

@@ -1,6 +1,7 @@
 const esbuild = require('esbuild');
 const { spawn } = require('child_process');
 const path = require('path');
+const fs = require('fs-extra');
 
 const isDev = process.argv.length > 2 && process.argv[2] == '--development';
 console.log('Electron isDev: ', isDev);
@@ -43,6 +44,7 @@ async function runDev() {
   if (isDev) {
     await runDev();
   } else {
+    await fs.copy(path.join(coreDir, 'out'), path.join(__dirname, './dist'));
     await esbuild.build(options);
   }
 })().catch((err) => {

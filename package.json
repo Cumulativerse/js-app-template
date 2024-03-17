@@ -7,6 +7,7 @@
     "dev": "npm run dev --workspace=core",
     "build": "npm run build --workspace=core",
     "desktop:dev": "npm --prefix ./desktop run dev",
+    "desktop:build": "npm run build --workspace=core && npm --prefix ./desktop run build",
     "extension:dev": "npm run extension:dev --workspace=core && npm run dev --workspace=extension",
     "extension:build": "npm run extension:build --workspace=core && npm run build --workspace=extension",
     "extension:test": "npm run dev --workspace=extension-test",
