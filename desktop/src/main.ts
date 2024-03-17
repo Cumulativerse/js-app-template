@@ -11,11 +11,14 @@ const DEV_SERVER_URL = 'http://localhost:3000/';
 let win: BrowserWindow | null;
 
 function createWindow() {
+  // Create the browser window.
   win = new BrowserWindow({
     icon: path.join(corePubDir, 'logo.svg'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+    width: 1280,
+    height: 720,
   });
 
   // Test active push message to Renderer-process.
@@ -26,6 +29,7 @@ function createWindow() {
   if (!app.isPackaged) {
     // Development mode
     win.loadURL(DEV_SERVER_URL);
+    win.webContents.openDevTools(); // Open the DevTools.
   } else {
     // Production mode
     const server = express();
@@ -55,4 +59,10 @@ app.on('activate', () => {
   }
 });
 
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
 app.whenReady().then(createWindow);
+
+// In this file you can include the rest of your app's specific main process
+// code. You can also put them in separate files and import them here.

@@ -3,10 +3,11 @@ const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs-extra');
 
+const desktopDistDir = './dist-electron';
+const coreDistDir = path.join(__dirname, 'dist');
+const coreDir = path.join(__dirname, '../core');
 const isDev = process.argv.length > 2 && process.argv[2] == '--development';
 console.log('Electron isDev: ', isDev);
-const outDir = './dist-electron';
-const coreDir = path.join(__dirname, '../core');
 
 /** @type {import('esbuild').BuildOptions} */
 const options = {
@@ -14,7 +15,7 @@ const options = {
   format: 'cjs',
   minify: !isDev,
   sourcemap: isDev && 'inline',
-  outdir: outDir,
+  outdir: desktopDistDir,
 };
 
 async function runDev() {
@@ -44,7 +45,7 @@ async function runDev() {
   if (isDev) {
     await runDev();
   } else {
-    await fs.copy(path.join(coreDir, 'out'), path.join(__dirname, './dist'));
+    await fs.copy(path.join(coreDir, 'out'), coreDistDir);
     await esbuild.build(options);
   }
 })().catch((err) => {

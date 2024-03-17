@@ -17,6 +17,12 @@ Core application is a static website.
 - `npm run utility:icon-generator` - Update all icons and logos.
 - `npm run prettier` - Run prettier for all files.
 
+### Desktop Development
+
+- Run `npm run desktop:dev` in root.
+  - If electron script updated, close the app and run "npm run preview" in desktop folder.
+- Run `npm run desktop:build` to build the desktop app
+
 ### Extension Development
 
 - `npm run extension:dev` - Development mode for extension. Load output directory as unpacked extension in chrome (enable developer mode in extensions).
