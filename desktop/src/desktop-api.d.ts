@@ -2,6 +2,9 @@ export {};
 
 declare global {
   interface Window {
-    ipcRenderer: import('electron').IpcRenderer;
+    desktopApi: {
+      logNodejs: (arg1: { [key: string]: string }) => void;
+      logBrowser: () => Promise<string>;
+    };
   }
 }

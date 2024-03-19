@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "npm run dev --workspace=core",
     "build": "npm run build --workspace=core",
+    "build:all": "npm run build --workspace=core && npm --prefix ./desktop run build && npm run build --workspace=extension",
     "desktop:dev": "npm --prefix ./desktop run dev",
     "desktop:build": "npm run build --workspace=core && npm --prefix ./desktop run build",
     "extension:dev": "npm run extension:dev --workspace=core && npm run dev --workspace=extension",
