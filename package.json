@@ -36,6 +36,7 @@
     "core",
     "extension",
     "extension-test",
+    "mobile",
     "utility-scripts",
     "packages/*"
   ],
