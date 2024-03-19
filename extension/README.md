@@ -1,4 +1,4 @@
-# Extension Specific
+# Extension App
 
 Includes extension specific files e.g: Content scripts, service workers, extension icons, manifest file.
 
