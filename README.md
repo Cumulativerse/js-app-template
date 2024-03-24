@@ -59,6 +59,6 @@ Todos and Warnings will be specified respectively inside code with `<ToDo>`, `<W
 
 We have used Next.js for core part because of its performance, but more customizable tools like Vite can make easier and better for some situations to integrate with other platforms like desktop, mobile, extension. Known problems for Next.js:
 
-- [ ] Next.js is using absolute urls, which is not good for mobile and desktop. It should be relative or configurable. For desktop, we are setting up a local server to serve assets.
+- [x] Next.js is using absolute urls, which is not good for desktop. It should be relative or configurable. For desktop, we are setting up a local server to serve assets.
 - [x] Next.js is using some inline scripts, which is not good for CSP and forbidden in extension. Using a postscript to remove them.
 - [x] Next.js is using "\_next" folder but underscore is forbidden in extension. Using a postscript to rename it.
