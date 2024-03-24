@@ -33,6 +33,10 @@ RTK Query will be used to interact with api, and its codegen package will be use
   - [ ] Remove tmp folder from `./src/lib/redux/features/` and cleanup related redux store code.
   - [ ] Remove coinGeckoApi codegen scripts from `utility-scripts/src/api-codegen/apicodegen.ts` and related swaggers.
 
+## Warnings
+
+- DaisyUI theme is using "oklch" css function which is not supported by old browsers (e.g. chrome v111). It will fallback to light theme in these browsers. So check for light theme too.
+
 <!-- Links Used through document -->
 
 [Next.js Folder]: https://nextjs.org/docs/getting-started/project-structure
