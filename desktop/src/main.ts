@@ -2,9 +2,9 @@ import { app, BrowserWindow, ipcMain } from 'electron';
 import express from 'express';
 import path from 'path';
 
-const coreDistDir = path.join(__dirname, '../dist');
+const distDir = path.join(__dirname, '../dist');
 const corePubDir = app.isPackaged
-  ? coreDistDir
+  ? distDir
   : path.join(__dirname, '../../core/public');
 const DEV_SERVER_URL = 'http://localhost:3000/';
 
@@ -33,11 +33,11 @@ function createWindow() {
   } else {
     // Production mode
     const server = express();
-    server.use(express.static(coreDistDir));
+    server.use(express.static(distDir));
     server.listen(5000, () => {
       win?.loadURL('http://localhost:5000');
     });
-    // win.loadFile(path.join(coreDistDir, 'index.html'));
+    // win.loadFile(path.join(distDir, 'index.html'));
   }
 }
 
