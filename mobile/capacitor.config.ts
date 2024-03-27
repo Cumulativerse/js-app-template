@@ -1,5 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
+const isDev = process.env.BUILD_MODE === 'development';
+console.log('isDev: ', isDev);
+
 // https://capacitorjs.com/docs/config#schema
 
 const config: CapacitorConfig = {
@@ -13,6 +16,8 @@ const config: CapacitorConfig = {
   },
   server: {
     androidScheme: 'https',
+    url: isDev ? 'http://192.168.1.2:3000' : undefined,
+    cleartext: isDev ? true : undefined,
   },
 };
 

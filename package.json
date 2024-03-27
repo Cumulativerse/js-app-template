@@ -7,7 +7,7 @@
     "dev": "npm run dev --workspace=core",
     "dev:desktop": "run-p dev desktop:dev",
     "dev:extension": "run-p extension:dev extension:test",
-    "dev:mobile": "run-p dev mobile:dev",
+    "dev:mobile": "run-p dev mobile:dev:android",
     "build": "npm run build --workspace=core",
     "build:all": "npm-run-all extension:build build --parallel desktop:build mobile:build:android",
     "build:desktop": "run-s build desktop:build",

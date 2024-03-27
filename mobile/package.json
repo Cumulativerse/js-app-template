@@ -5,7 +5,7 @@
   "scripts": {
     "sync": "cap sync",
     "open:android": "cap open android",
-    "dev:android": "cap run android",
+    "dev:android": "cross-env BUILD_MODE=development cap run android",
     "build:android": "cap build android"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "@capacitor/splash-screen": "latest"
   },
   "devDependencies": {
-    "@capacitor/cli": "latest"
+    "@capacitor/cli": "latest",
+    "cross-env": "^7"
   }
 }
