@@ -1,4 +1,4 @@
-## Mobile App
+# Mobile App
 
 Created by [`@capacitor/create-app`](https://github.com/ionic-team/create-capacitor-app) using:
 
@@ -9,10 +9,21 @@ Created by [`@capacitor/create-app`](https://github.com/ionic-team/create-capaci
 
 and comes with a very minimal shell for building an app.
 
-### Running this example
+## Usage
 
-To run the provided example, you can use `npm start` command.
+Some notes about created files and folders:
 
-```bash
-npm start
-```
+- `npx cap sync` sync core files:
+  - Copies dist directory to `android/src/main/assets/public`.
+  - Creates files `cordova.js` and `cordova_plugins.js` files in `android/src/main/assets/public`
+  - Creates files `capacitor.config.json` and `capacitor.plugins.json` in `android/app/src/main/assets/`
+  - Creates folder `android/capacitor-cordova-android-plugins`
+  - Creates file `config.xml` in `android/app/src/main/res/xml`
+  - Updates files `android/capacitor.settings.gradle`, `android/app/capacitor.build.gradle`
+- `npx cap open android` opens Android Studio:
+  - Creates folders `android/.gradle` and `android/.idea`
+- `npx cap run android` runs emulator (or device):
+  - Creates same files with `npx cap sync`
+- `npx cap build android` build for android:
+  - Creates folder `android/.gradle`
+  - Creates folder `android/app/build`

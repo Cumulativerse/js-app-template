@@ -5,13 +5,23 @@
   "private": true,
   "scripts": {
     "dev": "npm run dev --workspace=core",
+    "dev:desktop": "run-p dev desktop:dev",
+    "dev:extension": "run-p extension:dev extension:test",
+    "dev:mobile": "run-p dev mobile:dev",
     "build": "npm run build --workspace=core",
-    "build:all": "npm run build --workspace=core && npm --prefix ./desktop run build && npm run build --workspace=extension",
+    "build:all": "npm run build --workspaces --if-present && npm run extension:build",
+    "build:desktop": "run-s build desktop:build",
+    "build:extension": "npm run extension:build",
+    "build:mobile": "run-s build mobile:sync mobile:build:android",
     "desktop:dev": "npm --prefix ./desktop run dev",
-    "desktop:build": "npm run build --workspace=core && npm --prefix ./desktop run build",
+    "desktop:build": "npm --prefix ./desktop run build",
     "extension:dev": "npm run extension:dev --workspace=core && npm run dev --workspace=extension",
     "extension:build": "npm run extension:build --workspace=core && npm run build --workspace=extension",
     "extension:test": "npm run dev --workspace=extension-test",
+    "mobile:sync": "npm run sync --workspace=mobile",
+    "mobile:open:android": "npm run open:android --workspace=mobile",
+    "mobile:dev:android": "npm run dev:android --workspace=mobile",
+    "mobile:build:android": "npm run build:android --workspace=mobile",
     "utility:api-codegen": "npm run api-codegen --workspace=utility-scripts",
     "utility:icon-generator": "npm run icon-generator --workspace=utility-scripts",
     "lint": "npm run lint --workspaces --if-present",
@@ -41,6 +51,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
     "prettier": "^3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.11"
   }

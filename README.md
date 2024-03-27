@@ -15,6 +15,7 @@ Core application is a static website.
 - `npm run build` - Build for production.
 - `npm run utility:api-codegen` - Update api types from swagger.
 - `npm run utility:icon-generator` - Update all icons and logos.
+- `npm run lint` - Run lint for all files.
 - `npm run prettier` - Run prettier for all files.
 
 ### Desktop Development
@@ -30,6 +31,18 @@ Core application is a static website.
   - For extension changes, it will automatically build again, just reload extension. For content script changes, you need to reload test page too.
 - `npm run extension:build` - Build extension for production. It will minify code and disable source map.
 - `npm run extension:test` - Test extension against a website. Open [http://localhost:3001](http://localhost:3001) with your browser to see the result. 3000 is reserved for core development.
+
+## Mobile Development
+
+For the first time:
+
+- `npm run build` - Build core app.
+- `npm run mobile:sync` - Sync core app with mobile.
+- `npm run mobile:open:android` and after gradle build, click "Sync project with gradle files" button.
+
+Then, you can use dev or build commands:
+
+- `npm run mobile:dev:android`
 
 ## Structure
 
