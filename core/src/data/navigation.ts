@@ -7,11 +7,16 @@ export const appNavs = [
   {
     name: 'Desktop Page',
     href: '/desktop-page',
-    description: 'Desktop home page example',
+    description: 'Desktop page example',
   },
   {
     name: 'Extension Page',
     href: '/extension-page',
     description: 'Extension home page example',
+  },
+  {
+    name: 'Mobile Page',
+    href: '/mobile-page',
+    description: 'Mobile page example',
   },
 ];

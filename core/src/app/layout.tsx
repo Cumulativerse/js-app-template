@@ -30,7 +30,6 @@ export default function RootLayout({
           {/* Header */}
           <Link href="/">
             <Image
-              className="relative"
               src="/logo.svg"
               alt="Logo"
               width={180}

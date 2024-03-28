@@ -44,6 +44,8 @@ Then, you can use dev or build commands:
 
 - `npm run mobile:dev:android`
 
+You may need to update webview version of emulator (e.g. updating chrome)
+
 ## Structure
 
 Git lfs can be used for storing binary files by initializing it and uncommenting `.gitattributes`. VS Code is used for development. Prettier is used for auto code formatting with Prettier VS Code extension.
