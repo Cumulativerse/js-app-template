@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const isDev = process.env.BUILD_MODE === 'development';
-console.log('isDev: ', isDev);
+console.log('Mobile isDev: ', isDev);
 
 // https://capacitorjs.com/docs/config#schema
 

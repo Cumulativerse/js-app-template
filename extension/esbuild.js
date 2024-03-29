@@ -5,7 +5,7 @@ import { BundleExtensionUi } from './nextjs-to-extension.js';
 import { manifest } from './manifest.js';
 
 const isDev = process.argv.length > 2 && process.argv[2] == '--development';
-console.log('isDev: ', isDev);
+console.log('Extenion isDev: ', isDev);
 const outDir = './out';
 const coreOutDir = '../core/out';
 

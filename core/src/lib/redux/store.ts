@@ -1,4 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
+import environmentReducer from './features/environment/environment-slice';
+// Example slices
 import basicReducer from './features/tmp/basicSlice';
 import asyncReducer from './features/tmp/asyncSlice';
 import { pokemonApi } from './features/tmp/pokemonApi/pokemonApi';
@@ -27,6 +29,7 @@ export const rtkQueryErrorLogger: Middleware =
 
 export const store = configureStore({
   reducer: {
+    environment: environmentReducer,
     basic: basicReducer,
     async: asyncReducer,
     [pokemonApi.reducerPath]: pokemonApi.reducer,

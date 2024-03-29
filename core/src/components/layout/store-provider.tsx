@@ -1,6 +1,6 @@
 'use client';
 
-import { SplashScreen } from '@capacitor/splash-screen';
+import { AppTypeDetect } from '@/components/layout/app-type-detect';
 // Redux
 import { Provider } from 'react-redux';
 import { store } from '@/lib/redux/store';
@@ -10,7 +10,10 @@ export default function StoreProvider({
 }: {
   children: React.ReactNode;
 }) {
-  // Disables the splash screen for mobile apps.
-  SplashScreen.hide();
-  return <Provider store={store}>{children}</Provider>;
+  return (
+    <Provider store={store}>
+      <AppTypeDetect />
+      {children}
+    </Provider>
+  );
 }
