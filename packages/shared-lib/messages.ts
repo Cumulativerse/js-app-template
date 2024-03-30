@@ -3,8 +3,8 @@
  * [App] => [Page]
  */
 export const MessageType = {
-  AskConfirmation: 'ask-confirmation',
-  ConfirmationResult: 'confirmation-result',
+  AskConfirmation: 'custom::askConfirmation',
+  ConfirmationResult: 'custom::confirmationResult',
 } as const;
 export type MessageType = (typeof MessageType)[keyof typeof MessageType];
 export type MessageMap = {
@@ -19,7 +19,7 @@ export type MessageMap = {
 };
 
 export const EventType = {
-  CustomClick: 'custom-click',
+  CustomClick: 'custom::customClick',
   Message: 'message',
 } as const;
 type EventType = (typeof EventType)[keyof typeof EventType];
@@ -43,7 +43,7 @@ declare global {
  * Extension inner request-response
  */
 export const ExtMessageType = {
-  AskClickNum: 'ask-click-num',
+  AskClickNum: 'custom::askClickNum',
   AskConfirmation: MessageType.AskConfirmation,
   ConfirmationResult: MessageType.ConfirmationResult,
 } as const;
