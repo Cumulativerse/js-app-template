@@ -73,6 +73,11 @@ Todos and Warnings will be specified respectively inside code with `<ToDo>`, `<W
 
 ## ToDos
 
+- [ ] Add Progressive Web App.
+- [ ] Change extension from chrome extension to general extension.
+- [ ] Add ios for mobile app.
+- [ ] Update icon-generator in utility-scripts
+
 We have used Next.js for core part because of its performance, but more customizable tools like Vite can make easier and better for some situations to integrate with other platforms like desktop, mobile, extension. Known problems for Next.js:
 
 - [x] Next.js is using absolute urls, which is not good for desktop. It should be relative or configurable. For desktop, we are setting up a local server to serve assets.
