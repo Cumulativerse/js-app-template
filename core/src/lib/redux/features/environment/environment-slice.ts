@@ -23,7 +23,7 @@ const environmentSlice = createSlice({
   // immutable state based off those changes
   reducers: {
     updateAppType: (state) => {
-      if (process.env.APP_TYPE === 'extension') {
+      if (window.location.protocol.includes('extension')) {
         state.appType = 'extension';
       } else if (window.desktopApi) {
         state.appType = 'desktop';
