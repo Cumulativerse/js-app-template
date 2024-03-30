@@ -20,17 +20,17 @@ Core application is a static website.
 
 ### Desktop Development
 
-- Run `npm run desktop:dev` in root.
+- Run `npm run dev:desktop` in root.
   - If electron script updated, close the app and run "npm run preview" in desktop folder.
-- Run `npm run desktop:build` to build the desktop app
+- Run `npm run build:desktop` to build the desktop app
 
 ### Extension Development
 
-- `npm run extension:dev` - Development mode for extension. Load `./extension/out` directory as unpacked extension in chrome (enable developer mode in extensions).
+- `npm run dev:extension` - Development mode for extension. Load `./extension/out` directory as unpacked extension in chrome (enable developer mode in extensions).
   - For UI changes, no need to refresh extension, just build ui again and reopen popup
   - For extension changes, it will automatically build again, just reload extension. For content script changes, you need to reload test page too.
-- `npm run extension:build` - Build extension for production. It will minify code and disable source map.
-- `npm run extension:test` - Test extension against a website. Open [http://localhost:3001](http://localhost:3001) with your browser to see the result. 3000 is reserved for core development.
+  - This will also start extension-test server. Open [http://localhost:3001](http://localhost:3001) with your browser to see the result. 3000 is reserved for core development.
+- `npm run build:extension` - Build extension for production. It will minify code and disable source map.
 
 ## Mobile Development
 
@@ -42,7 +42,7 @@ For the first time:
 
 Then, you can use dev or build commands:
 
-- `npm run mobile:dev:android`
+- `npm run dev:mobile`
 
 You may need to update webview version of emulator (e.g. updating chrome)
 
@@ -54,8 +54,9 @@ Git lfs can be used for storing binary files by initializing it and uncommenting
 
 - core: Next.js app for UI and static website.
 - desktop: Electron app for desktop.
-- extenion: browser extension specific files e.g. worker scripts and manifest.json.
+- extension: browser extension specific files e.g. worker scripts and manifest.json.
 - extension-test: Next.js app to test extension related features.
+- mobile: Capacitor app for IOS and Android.
 - utility-scripts: Utility scripts to be used manually.
 - packages: Include all seperate packages.
   - shared-lib: Shared library for all packages.
