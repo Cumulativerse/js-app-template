@@ -4,7 +4,7 @@ Example project for developing different types of applications by mainly using J
 
 ## Usage
 
-Run `npm install` from root directory. This will install all dependencies for all workspaces.
+Run `npm install` from root directory. This will install all dependencies for all workspaces (desktop is not in workspace).
 Run all these commands from root directory.
 
 ### Core Development
@@ -32,7 +32,7 @@ Core application is a static website.
   - This will also start extension-test server. Open [http://localhost:3001](http://localhost:3001) with your browser to see the result. 3000 is reserved for core development.
 - `npm run build:extension` - Build extension for production. It will minify code and disable source map.
 
-## Mobile Development
+### Mobile Development
 
 For the first time:
 
