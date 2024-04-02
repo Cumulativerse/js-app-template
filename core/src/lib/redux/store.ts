@@ -1,18 +1,16 @@
-import { configureStore } from '@reduxjs/toolkit';
-import environmentReducer from './features/environment/environment-slice';
-// Example slices
-import basicReducer from './features/tmp/basicSlice';
-import asyncReducer from './features/tmp/asyncSlice';
-import { pokemonApi } from './features/tmp/pokemonApi/pokemonApi';
-import { coinGeckoApi } from './features/tmp/coinGeckoApi/coinGeckoApi';
-// For logging errors
-import { isRejectedWithValue } from '@reduxjs/toolkit';
+import { configureStore, isRejectedWithValue } from '@reduxjs/toolkit';
 import type {
   MiddlewareAPI,
   Middleware,
   ThunkAction,
   Action,
 } from '@reduxjs/toolkit';
+import environmentReducer from './features/environment/environment-slice';
+// Example slices
+import basicReducer from './features/tmp/basicSlice';
+import asyncReducer from './features/tmp/asyncSlice';
+import { pokemonApi } from './features/tmp/pokemonApi/pokemonApi';
+import { coinGeckoApi } from './features/tmp/coinGeckoApi/coinGeckoApi';
 
 /**
  * Catch all errors from RTK Query

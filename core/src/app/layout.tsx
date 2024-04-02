@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import StoreProvider from '@/components/layout/store-provider';
+import AppTypeDetect from '@/components/layout/app-type-detect';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -38,7 +39,10 @@ export default function RootLayout({
             />
           </Link>
           {/* Main */}
-          <StoreProvider>{children}</StoreProvider>
+          <StoreProvider>
+            <AppTypeDetect />
+            {children}
+          </StoreProvider>
           {/* Footer */}
           <div>
             <span>©{new Date().getFullYear()} — Made by </span>
