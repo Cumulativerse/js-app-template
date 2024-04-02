@@ -6,8 +6,6 @@ Note: `@rtk-query/codegen-openapi` is depends on `prettier` v2, which is not com
 
 ## ToDo
 
-- [ ] Update icon in icon-generator.
-
 **Clean Up:**
 
 - [ ] Remove coinGeckoApi codegen scripts from `./scripts/src/api-codegen/apicodegen.ts` and related swaggers.
