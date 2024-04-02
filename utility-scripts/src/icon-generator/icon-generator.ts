@@ -5,6 +5,7 @@ import { createCanvas, loadImage } from 'canvas';
 
 const sourceIconDir = __dirname;
 const rootDir = path.join(__dirname, '../../..');
+
 const coreAssetDir = path.join(rootDir, 'core/src/assets/images');
 const coreAppDir = path.join(rootDir, 'core/src/app');
 const coreIconSizes = [32, 192, 384];
@@ -13,6 +14,8 @@ const faviconSize = 32;
 const testAppDir = path.join(rootDir, 'extension-test/src/app');
 const extensionIconDir = path.join(rootDir, 'extension/public/icons');
 const extensionIconSizes = [16, 48, 128];
+
+const mobileResDir = path.join(rootDir, 'mobile/resources');
 
 async function IconGenerator() {
   const sourceIconData = await readFile(sourceIconDir + '/icon.png');
@@ -49,6 +52,15 @@ async function IconGenerator() {
   // Move logo to asset directory
   generatedJobs.push(
     copyFile(sourceIconDir + '/logo.png', `${coreAssetDir}/logo.png`),
+  );
+  // Create Mobile resources
+  // prettier-ignore
+  generatedJobs.push(
+    resizeImageToFile(sourceIconData, `${mobileResDir}/icon-only.png`, 1024, 1024),
+    resizeImageToFile(sourceIconData, `${mobileResDir}/icon-foreground.png`, 1024, 1024),
+    resizeImageToFile(sourceIconData, `${mobileResDir}/icon-background.png`, 1024, 1024),
+    resizeImageToFile(sourceIconData, `${mobileResDir}/splash.png`, 2732, 2732),
+    resizeImageToFile(sourceIconData, `${mobileResDir}/splash-dark.png`, 2732, 2732),
   );
   await Promise.all(generatedJobs);
   console.log(`icon-generator: Icons generated.`);

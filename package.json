@@ -23,7 +23,7 @@
     "mobile:dev:android": "npm run dev:android --workspace=mobile",
     "mobile:build:android": "npm run mobile:sync && npm run build:android --workspace=mobile",
     "utility:api-codegen": "npm run api-codegen --workspace=utility-scripts",
-    "utility:icon-generator": "npm run icon-generator --workspace=utility-scripts",
+    "utility:icon-generator": "npm run icon-generator --workspace=utility-scripts && npm run icon-generator --workspace=mobile",
     "lint": "npm run lint --workspaces --if-present",
     "prettier": "prettier --write . --ignore-path .prettierignore --ignore-path .gitignore --ignore-path core/.gitignore --ignore-path desktop/.gitignore --ignore-path extension/.gitignore --ignore-path extension-test/.gitignore --ignore-path mobile/.gitignore --ignore-path mobile/android/.gitignore --ignore-path mobile/android/app/.gitignore --ignore-path utility-scripts/.gitignore"
   },
