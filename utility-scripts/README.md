@@ -6,7 +6,7 @@ Note: `@rtk-query/codegen-openapi` is depends on `prettier` v2, which is not com
 
 ## ToDo
 
-- [x] Update icon in icon-generator.
+- [ ] Update icon in icon-generator.
 
 **Clean Up:**
 
