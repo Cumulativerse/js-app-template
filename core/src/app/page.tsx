@@ -10,7 +10,7 @@ export default function Home() {
   const appType = useAppSelector(selectAppType);
   return (
     <main className="flex flex-col items-center">
-      <div className="prose lg:prose-xl my-4">
+      <div className="prose lg:prose-xl my-4 text-center">
         <h1>APPs</h1>
         <p>Current app type is {appType}.</p>
       </div>

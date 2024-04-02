@@ -1,39 +1,54 @@
 import { writeFile, readFile, copyFile } from 'fs/promises';
+import path from 'path';
 import toIco from 'to-ico';
 import { createCanvas, loadImage } from 'canvas';
 
-const sourceIconDir = './src/icon-generator';
-const corePubDir = '../core/public';
-const coreAppDir = '../core/src/app';
-const extensionIconDir = '../extension/public/assets';
-const testAppDir = '../extension-test/src/app';
-
+const sourceIconDir = __dirname;
+const rootDir = path.join(__dirname, '../../..');
+const coreAssetDir = path.join(rootDir, 'core/src/assets/images');
+const coreAppDir = path.join(rootDir, 'core/src/app');
+const coreIconSizes = [32, 192, 384];
 const faviconSize = 32;
-const iconSizes = [16, 48, 128];
-const iconType = 'image/png' as const;
+
+const testAppDir = path.join(rootDir, 'extension-test/src/app');
+const extensionIconDir = path.join(rootDir, 'extension/public/icons');
+const extensionIconSizes = [16, 48, 128];
 
 async function IconGenerator() {
-  const sourceData = await readFile(sourceIconDir + '/icon.png');
+  const sourceIconData = await readFile(sourceIconDir + '/icon.png');
   let generatedJobs: Promise<void>[] = [];
   // Generate icons
-  for (const size of iconSizes) {
+  for (const size of coreIconSizes) {
     generatedJobs.push(
       resizeImageToFile(
-        sourceData,
-        `${extensionIconDir}/icon-${size}.png`,
+        sourceIconData,
+        `${coreAppDir}/icon${size}.png`,
         size,
         size,
       ),
     );
   }
+  for (const size of extensionIconSizes) {
+    generatedJobs.push(
+      resizeImageToFile(
+        sourceIconData,
+        `${extensionIconDir}/icon${size}.png`,
+        size,
+        size,
+      ),
+    );
+  }
+  generatedJobs.push(
+    resizeImageToFile(sourceIconData, `${coreAppDir}/apple-icon.png`, 180, 180),
+  );
   // Generate Favicons
   generatedJobs.push(
-    generateIcoToFile(sourceData, `${coreAppDir}/favicon.ico`, faviconSize),
-    generateIcoToFile(sourceData, `${testAppDir}/favicon.ico`, faviconSize),
+    generateIcoToFile(sourceIconData, `${coreAppDir}/favicon.ico`, faviconSize),
+    generateIcoToFile(sourceIconData, `${testAppDir}/favicon.ico`, faviconSize),
   );
-  // Move logo SVG to public directories
+  // Move logo to asset directory
   generatedJobs.push(
-    copyFile(sourceIconDir + '/logo.svg', `${corePubDir}/logo.svg`),
+    copyFile(sourceIconDir + '/logo.png', `${coreAssetDir}/logo.png`),
   );
   await Promise.all(generatedJobs);
   console.log(`icon-generator: Icons generated.`);
@@ -51,7 +66,15 @@ async function resizeImageToFile(
   const sourceImage = await loadImage(sourceData);
   // params: image, position.x, position.y, size.width, size.height
   ctx.drawImage(sourceImage, 0, 0, targetWidth, targetHeight);
-  const resizedData = canvas.toBuffer(iconType);
+  let resizedData: Buffer;
+  if (
+    path.extname(destination) === '.jpg' ||
+    path.extname(destination) === '.jpeg'
+  ) {
+    resizedData = canvas.toBuffer('image/jpeg');
+  } else {
+    resizedData = canvas.toBuffer('image/png');
+  }
 
   // Save resized image to a file
   await writeFile(destination, resizedData);

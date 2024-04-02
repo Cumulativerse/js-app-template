@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import StoreProvider from '@/components/layout/store-provider';
 import AppTypeDetect from '@/components/layout/app-type-detect';
+import logo from '@/assets/images/logo.png';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -31,10 +32,9 @@ export default function RootLayout({
           {/* Header */}
           <Link href="/">
             <Image
-              src="/logo.svg"
+              src={logo}
               alt="Logo"
-              width={180}
-              height={37}
+              className="h-10 w-fit rounded-xl"
               priority
             />
           </Link>

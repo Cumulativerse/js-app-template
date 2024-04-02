@@ -13,7 +13,7 @@ let win: BrowserWindow | null;
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    icon: path.join(corePubDir, 'logo.svg'),
+    icon: path.join(corePubDir, 'favicon.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
