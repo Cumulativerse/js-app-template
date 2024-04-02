@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { checkClickNum } from '@/lib/controllers/send-message';
+import { checkClickNum } from '@/lib/send-message';
 
 export default function Home() {
   const [clickNum, setClickNum] = useState<number>();

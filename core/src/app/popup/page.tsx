@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import { respondQuestion } from '@/lib/controllers/send-message';
+import { respondQuestion } from '@/lib/send-message';
 
 export default function Popup() {
   const searchParams = useSearchParams();
