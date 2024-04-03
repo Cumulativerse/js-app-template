@@ -2,6 +2,7 @@ import { writeFile, readFile, copyFile } from 'fs/promises';
 import path from 'path';
 import toIco from 'to-ico';
 import { createCanvas, loadImage } from 'canvas';
+import fetch from 'node-fetch-commonjs';
 
 const sourceIconDir = __dirname;
 const rootDir = path.join(__dirname, '../../..');
@@ -18,6 +19,14 @@ const extensionIconSizes = [16, 48, 128];
 const mobileResDir = path.join(rootDir, 'mobile/resources');
 
 async function IconGenerator() {
+  await fetchAndSaveImage(
+    'https://media.githubusercontent.com/media/Cumulativerse/.github/main/assets/icon.png',
+    sourceIconDir + '/icon.png',
+  );
+  await fetchAndSaveImage(
+    'https://media.githubusercontent.com/media/Cumulativerse/.github/main/assets/logo.png',
+    sourceIconDir + '/logo.png',
+  );
   const sourceIconData = await readFile(sourceIconDir + '/icon.png');
   let generatedJobs: Promise<void>[] = [];
   // Generate icons
@@ -64,6 +73,13 @@ async function IconGenerator() {
   );
   await Promise.all(generatedJobs);
   console.log(`icon-generator: Icons generated.`);
+}
+
+async function fetchAndSaveImage(url: string, path: string) {
+  const response = await fetch(url);
+  const arrayBuffer = await response.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
+  await writeFile(path, buffer);
 }
 
 async function resizeImageToFile(

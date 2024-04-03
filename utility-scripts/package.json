@@ -9,6 +9,7 @@
   "dependencies": {
     "@rtk-query/codegen-openapi": "^1.2.0",
     "canvas": "^2.11.2",
+    "node-fetch-commonjs": "^3.3.2",
     "to-ico": "^1.1.5"
   },
   "devDependencies": {
