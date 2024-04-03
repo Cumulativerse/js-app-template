@@ -23,6 +23,14 @@ Created by `npx create-next-app@latest` command. Typescript, EsLint, Tailwind CS
 
 ## ToDos
 
+- [ ] Add next-seo
+- [ ] Add logging mechanism
+- [ ] Add sentry: `./src/lib/redux/middleware/logger.ts` will logs redux actions to console. It can be used to log errors to sentry.
+
+**Through Development:**
+
+- [ ] Edit pages in `./src/app/sitemap.ts` to include all pages and maybe edit `./src/app/robots.ts`.
+
 **Clean Up:**
 
 - [ ] Remove unused examples.

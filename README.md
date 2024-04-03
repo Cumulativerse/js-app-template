@@ -73,7 +73,7 @@ Todos and Warnings will be specified respectively inside code with `<ToDo>`, `<W
 
 ## ToDos
 
-- [ ] Add Web workers to PWA.
+- [ ] Add Web workers to PWA: [Capacitor Web Workers](https://capacitorjs.com/docs/web/progressive-web-apps).
 - [ ] Change extension from chrome extension to general extension.
 - [ ] Add ios for mobile app.
 - [ ] Update Desktop icons and builder configs.
