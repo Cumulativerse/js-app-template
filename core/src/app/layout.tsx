@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: process.env.NEXT_PUBLIC_APP_TITLE,
-    template: '%s | ' + process.env.NEXT_PUBLIC_APP_TITLE,
+    default: process.env.NEXT_PUBLIC_APP_SHORT_NAME,
+    template: '%s | ' + process.env.NEXT_PUBLIC_APP_SHORT_NAME,
   },
   description: process.env.NEXT_PUBLIC_APP_DESCRIPTION,
   keywords: ['app', 'next.js examples'],

@@ -73,10 +73,10 @@ Todos and Warnings will be specified respectively inside code with `<ToDo>`, `<W
 
 ## ToDos
 
-- [ ] Add Progressive Web App.
+- [ ] Add Web workers to PWA.
 - [ ] Change extension from chrome extension to general extension.
 - [ ] Add ios for mobile app.
-- [ ] Update icon-generator in utility-scripts
+- [ ] Update Desktop icons and builder configs.
 
 We have used Next.js for core part because of its performance, but more customizable tools like Vite can make easier and better for some situations to integrate with other platforms like desktop, mobile, extension. Known problems for Next.js:
 
