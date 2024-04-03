@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body
-        className={`${inter.className}${process.env.APP_TYPE === 'extension' && ' min-h-[600px] min-w-[400px]'}`}
+        className={`${inter.className} ${process.env.APP_TYPE === 'extension' ? 'min-h-[600px] min-w-[400px]' : 'min-h-screen'}`}
       >
         <div className="container flex min-h-screen flex-col items-center justify-between p-8">
           {/* Header */}
