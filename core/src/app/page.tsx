@@ -17,7 +17,7 @@ export default function Home() {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {appNavs.map((appNav) => (
-          <div className="card w-80 shadow-xl" key={appNav.name}>
+          <div className="card bg-base-300 w-80 shadow-xl" key={appNav.name}>
             <div className="card-body">
               <h2 className="card-title">{appNav.name}</h2>
               <p>{appNav.description}</p>
