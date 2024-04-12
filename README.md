@@ -4,7 +4,7 @@ Example project for developing different types of applications by mainly using J
 
 ## Usage
 
-Run `npm install` from root directory. This will install all dependencies for all workspaces (desktop is not in workspace).
+Run `npm install` from root directory. This will install all dependencies for all workspaces.
 Run all these commands from root directory.
 
 ### Core Development
