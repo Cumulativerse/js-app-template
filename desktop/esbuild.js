@@ -3,7 +3,7 @@ const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs-extra');
 
-const desktopDistDir = './dist-electron';
+const desktopDistDir = path.join(__dirname, 'dist-electron');
 const distDir = path.join(__dirname, 'dist');
 const coreDir = path.join(__dirname, '../core');
 const coreDistDir = path.join(coreDir, 'out');
@@ -12,7 +12,10 @@ console.log('Electron isDev: ', isDev);
 
 /** @type {import('esbuild').BuildOptions} */
 const options = {
-  entryPoints: ['./src/main.ts', './src/preload.ts'],
+  entryPoints: [
+    path.join(__dirname, 'src/main.ts'),
+    path.join(__dirname, 'src/preload.ts'),
+  ],
   format: 'cjs',
   minify: !isDev,
   sourcemap: isDev && 'inline',
