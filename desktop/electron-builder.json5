@@ -3,9 +3,10 @@
  */
 {
   $schema: 'https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json',
-  appId: 'YourAppID',
+  appId: 'com.example.app',
   asar: true,
-  productName: 'YourAppName',
+  productName: 'Js App Template',
+  copyright: 'Copyright © year ${author}',
   directories: {
     output: 'release/${version}',
   },
@@ -22,6 +23,7 @@
       },
     ],
     artifactName: '${productName}-Windows-${version}-Setup.${ext}',
+    icon: 'resources/icon.png',
   },
   nsis: {
     oneClick: false,

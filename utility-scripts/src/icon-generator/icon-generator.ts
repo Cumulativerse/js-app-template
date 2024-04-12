@@ -15,6 +15,7 @@ const testAppDir = path.join(rootDir, 'extension-test/src/app');
 const extensionIconDir = path.join(rootDir, 'extension/public/icons');
 const extensionIconSizes = [16, 48, 128];
 
+const desktopResDir = path.join(rootDir, 'desktop/resources');
 const mobileResDir = path.join(rootDir, 'mobile/resources');
 
 async function IconGenerator() {
@@ -55,6 +56,10 @@ async function IconGenerator() {
   // Move logo to asset directory
   generatedJobs.push(
     copyFile(sourceIconDir + '/logo.png', `${coreAssetDir}/logo.png`),
+  );
+  // Create Desktop resources
+  generatedJobs.push(
+    resizeImageToFile(sourceIconData, `${desktopResDir}/icon.png`, 512, 512),
   );
   // Create Mobile resources
   // prettier-ignore

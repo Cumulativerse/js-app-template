@@ -3,9 +3,6 @@ import express from 'express';
 import path from 'path';
 
 const distDir = path.join(__dirname, '../dist');
-const corePubDir = app.isPackaged
-  ? distDir
-  : path.join(__dirname, '../../core/public');
 const DEV_SERVER_URL = 'http://localhost:3000/';
 
 let win: BrowserWindow | null;
@@ -13,7 +10,6 @@ let win: BrowserWindow | null;
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    icon: path.join(corePubDir, 'favicon.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
