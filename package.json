@@ -45,7 +45,6 @@
   "homepage": "https://github.com/Cumulativerse/js-app-template#readme",
   "workspaces": [
     "core",
-    "desktop",
     "extension",
     "extension-test",
     "mobile",

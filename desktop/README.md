@@ -1,3 +1,3 @@
 # Desktop App
 
-local dependencies installed with `npm i --workspaces=false` since electron have problems with workspaces
+This is not in workspace since electron have problems with workspaces. Even if added to workspace, it is advised to install electron and builder with `npm i --workspaces=false`.
